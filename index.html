@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meigi's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section class="container">
+      <section class="introduction">
+        <header>
+          <ul>
+            <li>Home</li>
+            <li>Experience</li>
+            <li>Skills</li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li>Contact Me</li>
+          </ul>
+        </header>
+        <section class="hero">
+          <div class="about">
+            <p>
+              HI👋🏽, I AM MAHORO NSHUTI MEIGI , I AM A SOFTWARE DEVELOPER . I AM
+              Pursuing a degree in Information Technology with hands-on
+              experience in Full Stack Development and a passion for building
+              innovative software solutions.
+            </p>
+            <div class="about-btn">
+              <button>
+                Let's talk
+                <span class="material-symbols-outlined"> inbox </span>
+              </button>
+              <button>
+                Get my cv
+                <span class="material-symbols-outlined"> contract </span>
+              </button>
+            </div>
+          </div>
+          <div class="image">
+            <img src="my-profile.png" alt="My profile picture" />
+          </div>
+        </section>
+      </section>
+
+      <section class="experiences">
+        <div class="carousel-header">
+          <span class="material-symbols-outlined carousel-nav" onclick="prevExperience()"> chevron_backward </span>
+          <p style="font-weight: bolder; font-size: 25px">experiences</p>
+          <span class="material-symbols-outlined carousel-nav" onclick="nextExperience()"> chevron_forward </span>
+        </div>
+        <div class="carousel-container">
+          <div class="carousel-track" id="experienceTrack">
+            <!-- Experiences will be dynamically generated here -->
+          </div>
+        </div>
+      </section>
+
+      <section class="skills">
+        <div class="carousel-header">
+          <span class="material-symbols-outlined carousel-nav" onclick="prevSkill()"> chevron_backward </span>
+          <p style="font-weight: bolder; font-size: 25px">skills</p>
+          <span class="material-symbols-outlined carousel-nav" onclick="nextSkill()"> chevron_forward </span>
+        </div>
+        <div class="carousel-container">
+          <div class="carousel-track skills-track" id="skillsTrack">
+            <!-- Skills will be dynamically generated here -->
+          </div>
+        </div>
+      </section>
+
+      <section class="services">
+        <div class="carousel-header">
+          <span class="material-symbols-outlined carousel-nav" onclick="prevService()"> chevron_backward </span>
+          <p style="font-weight: bolder; font-size: 25px">services</p>
+          <span class="material-symbols-outlined carousel-nav" onclick="nextService()"> chevron_forward </span>
+        </div>
+        <div class="carousel-container">
+          <div class="carousel-track services-track" id="servicesTrack">
+            <!-- Services will be dynamically generated here -->
+          </div>
+        </div>
+      </section>
+
+      <section class="projects">
+        <div class="carousel-header">
+          <span class="material-symbols-outlined carousel-nav" onclick="prevProject()"> chevron_backward </span>
+          <p style="font-weight: bolder; font-size: 25px">projects</p>
+          <span class="material-symbols-outlined carousel-nav" onclick="nextProject()"> chevron_forward </span>
+        </div>
+        <div class="carousel-container">
+          <div class="carousel-track projects-track" id="projectsTrack">
+            <!-- Projects will be dynamically generated here -->
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="contact">
+      <p style="font-weight: bolder; font-size: 25px">Contact Me here</p>
+      <div class="contact-card">
+        <div class="socials">
+          <li>
+            <a href="http://www.github.com/Meigi09">
+              <span>LinkedIn</span>
+              <span>icon</span></a
+            >
+          </li>
+          <li>
+            <a href="http://www.github.com/Meigi09">
+              <span>GitHub</span>
+              <span>icon</span></a
+            >
+          </li>
+          <li>
+            <a href="http://www.github.com/Meigi09">
+              <span>Twitter</span>
+              <span>icon</span></a
+            >
+          </li>
+        </div>
+        <div class="form">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="enter your email here"
+          />
+          <br /><br />
+          <label for="message">Message:</label>
+          <textarea
+            name=""
+            id="message"
+            placeholder="and your message goes here"
+          ></textarea>
+          <br /><br />
+          <button>
+            Send My Message
+            <span class="material-symbols-outlined"> send </span>
+          </button>
+        </div>
+      </div>
+      <footer>
+        <p>&copy; Made by Mahoro Nshuti Meigi 2025</p>
+      </footer>
+    </section>
+
+    <script>
+      // Data arrays
+      const experiences = [
+        {
+          company: "Future Focus Academy",
+          logo: "future.jpeg",
+          title: "Web Developer and Facilitator",
+          startDate: "June 2025",
+          endDate: "Present",
+          desc: "Developed responsive web applications and facilitated training sessions for aspiring developers. Led frontend development projects using modern technologies."
+        },
+        
+      ];
+
+      const skills = [
+        {
+          title: "Frontend Languages",
+          items: ["HTML", "CSS", "JavaScript", "TypeScript"]
+        },
+        {
+          title: "Frontend Frameworks",
+          items: ["React", "Vue.js", "Angular", "Next.js"]
+        },
+        {
+          title: "Backend Technologies",
+          items: ["Node.js", "Python", "PHP", "Express.js"]
+        },
+        {
+          title: "Databases",
+          items: ["MongoDB", "MySQL", "PostgreSQL", "Firebase"]
+        },
+        {
+          title: "Tools & Others",
+          items: ["Git", "Docker", "AWS", "Figma"]
+        }
+      ];
+
+      const services = [
+        {
+          title: "Frontend Development",
+          desc: "Creating responsive and interactive user interfaces using modern frameworks and technologies to deliver exceptional user experiences.",
+          image: "frontend.png"
+        },
+        {
+          title: "Backend Development",
+          desc: "Building robust server-side applications, APIs, and database management systems to power your web applications efficiently.",
+          image: "backend.png"
+        },
+        
+      ];
+
+      const projects = [
+        {
+          title: "Urban Management System",
+          desc: "This system allows farmers to record their produce, track crop situations, and manage agricultural data efficiently.",
+          image: "urban.png",
+          tools: ["React", "Node.js", "MongoDB", "Express"],
+          link:"https://rwanda-urban-management-system.vercel.app/"
+        },
+        {
+          title: "Digital Libary UI",
+          desc: "A good user interface that shows users books ,authors ,articles",
+          image: "library.png",
+          tools: ["HTML", "CSS"],
+          link:"https://meigi09.github.io/simple-digital-library-UI/"
+        },
+        {
+          title: "Train Booking System",
+          desc: "A collaborative task management application with real-time updates, team collaboration, and progress tracking.",
+          image: "booking-landing.png",
+          tools: ["React", "Springboot", "Vercel"],
+          link:"https://github.com/Meigi09/booking-train-ticket"
+        }
+      ];
+
+      // Carousel positions
+      let currentExperience = 0;
+      let currentSkill = 0;
+      let currentService = 0;
+      let currentProject = 0;
+
+      // Generate HTML functions
+      function generateExperiences() {
+        const track = document.getElementById('experienceTrack');
+        experiences.forEach(exp => {
+          const expHTML = `
+            <div class="experiences-card">
+              <div class="logo">
+                <img src="${exp.logo || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiNmMGYwZjAiLz4KPHR4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzk5OTk5OSI+Q088L3R4dD4KPC9zdmc+'}" alt="Company Logo" />
+                <p class="company">${exp.company}</p>
+              </div>
+              <p class="title">${exp.title}</p>
+              <p class="date"><span>${exp.startDate}</span> - <span>${exp.endDate}</span></p>
+              <p class="desc">${exp.desc}</p>
+            </div>
+          `;
+          track.innerHTML += expHTML;
+        });
+      }
+
+      function generateSkills() {
+        const track = document.getElementById('skillsTrack');
+        skills.forEach(skill => {
+          const skillHTML = `
+            <div class="skills-card">
+              <p class="title">${skill.title}</p>
+              <div class="item">
+                ${skill.items.map(item => `<p>${item}</p>`).join('')}
+              </div>
+            </div>
+          `;
+          track.innerHTML += skillHTML;
+        });
+      }
+
+      function generateServices() {
+        const track = document.getElementById('servicesTrack');
+        services.forEach(service => {
+          const serviceHTML = `
+            <div class="services-card">
+              <img src="${service.image || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDQwMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMTgwIiBmaWxsPSIjZjBmMGYwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOTk5OTk5Ij5TZXJ2aWNlIEltYWdlPC90ZXh0Pgo8L3N2Zz4='}" alt="Service Image" />
+              <p class="title">${service.title}</p>
+              <p class="desc">${service.desc}</p>
+            </div>
+          `;
+          track.innerHTML += serviceHTML;
+        });
+      }
+
+      function generateProjects() {
+        const track = document.getElementById('projectsTrack');
+        projects.forEach(project => {
+          const projectHTML = `
+            <div class="projects-card">
+              <img src="${project.image || 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDUwMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iMTgwIiBmaWxsPSIjZjBmMGYwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOTk5OTk5Ij5Qcm9qZWN0IEltYWdlPC90ZXh0Pgo8L3N2Zz4='}" alt="project image" />
+              <p class="title">${project.title}</p>
+              <p class="desc">${project.desc}</p>
+              <p style="font-weight: bolder; font-size: 15px; margin-top: 2rem">
+                Tools Used
+              </p>
+              <div class="tools">
+                ${project.tools.map(tool => `<li>${tool}</li>`).join('')}
+              </div>
+              <button>
+          <a href="${project.link || '#'}" target="_blank">Live Demo</a>
+          <span class="material-symbols-outlined"> arrow_outward </span>
+        </button>
+            </div>
+          `;
+          track.innerHTML += projectHTML;
+        });
+      }
+
+      // Carousel navigation functions
+      function nextExperience() {
+        currentExperience = (currentExperience + 1) % experiences.length;
+        updateCarousel('experienceTrack', currentExperience, '100%');
+      }
+
+      function prevExperience() {
+        currentExperience = currentExperience === 0 ? experiences.length - 1 : currentExperience - 1;
+        updateCarousel('experienceTrack', currentExperience, '100%');
+      }
+
+      function nextSkill() {
+        const maxVisible = Math.floor(window.innerWidth / 350);
+        const maxIndex = Math.max(0, skills.length - maxVisible);
+        currentSkill = Math.min(currentSkill + 1, maxIndex);
+        updateCarousel('skillsTrack', currentSkill, '350px');
+      }
+
+      function prevSkill() {
+        currentSkill = Math.max(currentSkill - 1, 0);
+        updateCarousel('skillsTrack', currentSkill, '350px');
+      }
+
+      function nextService() {
+        const maxVisible = Math.floor(window.innerWidth / 400);
+        const maxIndex = Math.max(0, services.length - maxVisible);
+        currentService = Math.min(currentService + 1, maxIndex);
+        updateCarousel('servicesTrack', currentService, '400px');
+      }
+
+      function prevService() {
+        currentService = Math.max(currentService - 1, 0);
+        updateCarousel('servicesTrack', currentService, '400px');
+      }
+
+      function nextProject() {
+        const maxVisible = Math.floor(window.innerWidth / 450);
+        const maxIndex = Math.max(0, projects.length - maxVisible);
+        currentProject = Math.min(currentProject + 1, maxIndex);
+        updateCarousel('projectsTrack', currentProject, '450px');
+      }
+
+      function prevProject() {
+        currentProject = Math.max(currentProject - 1, 0);
+        updateCarousel('projectsTrack', currentProject, '450px');
+      }
+
+      function updateCarousel(trackId, position, itemWidth) {
+        const track = document.getElementById(trackId);
+        const translateX = itemWidth === '100%' ? position * -100 : position * -parseInt(itemWidth);
+        const unit = itemWidth === '100%' ? '%' : 'px';
+        track.style.transform = `translateX(${translateX}${unit})`;
+      }
+
+      // Initialize everything when page loads
+      document.addEventListener('DOMContentLoaded', function() {
+        generateExperiences();
+        generateSkills();
+        generateServices();
+        generateProjects();
+      });
+
+      // Reset carousel positions on window resize
+      window.addEventListener('resize', function() {
+        currentSkill = 0;
+        currentService = 0;
+        currentProject = 0;
+        updateCarousel('skillsTrack', 0, '350px');
+        updateCarousel('servicesTrack', 0, '400px');
+        updateCarousel('projectsTrack', 0, '450px');
+      });
+    </script>
+  </body>
+</html>
